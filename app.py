@@ -86,12 +86,12 @@ if uploaded_file:
                     num_to_show = min(4, len(recommendations))
                     selected_clothes = random.sample(recommendations, num_to_show)
 
-                    cols = st.columns(num_to_show)
+                    cols = st.columns(1)
 
                     for i, cloth in enumerate(selected_clothes):
                         img_path = os.path.join(IMAGES_DIR, cloth["img"])
 
-                        with cols[i]:
+                        with cols[0]:
                             if os.path.exists(img_path):
                                 st.image(img_path, use_container_width=True)
 
